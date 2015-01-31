@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <FacebookSDK/FacebookSDK.h>
+#import <Firebase/Firebase.h>
 @interface AppCommunication : NSObject
 + (instancetype)sharedCommunicator;
+@property (nonatomic, strong) Firebase* firebase;
 -(void)postRequest:(NSDictionary*) input withCompletion:(void (^)(NSData *, NSURLResponse *, NSError *))completion;
 -(void)getRequestWithCompletion:(void (^)(NSData *, NSURLResponse *, NSError *))completion;
 @end

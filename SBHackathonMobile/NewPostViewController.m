@@ -8,6 +8,7 @@
 
 #import "NewPostViewController.h"
 #import "AppCommunication.h"
+#import <Firebase/Firebase.h>
 @interface NewPostViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *place;
 @property (strong, nonatomic) IBOutlet UITextField *what;
@@ -21,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   
     // Do any additional setup after loading the view.
 }
 
@@ -48,6 +50,7 @@
             
             if (responseStatusCode == 200)
             {
+               [[AppCommunication sharedCommunicator].firebase setValue:@"hi"];
                [self performSegueWithIdentifier:@"Done" sender:self];
             }
             else

@@ -9,8 +9,10 @@
 #import "FeedTableViewController.h"
 #import "AppCommunication.h"
 #import "Feed.h"
+#import <Firebase/Firebase.h>
 @interface FeedTableViewController ()
 @property (nonatomic, strong) NSMutableArray* feeds;
+
 @end
 
 @implementation FeedTableViewController
@@ -19,6 +21,11 @@
     [super viewDidLoad];
     self.feeds = [NSMutableArray array];
     [self retrieveFeed];
+    [AppCommunication sharedCommunicator].firebase = [[Firebase alloc] initWithUrl:@"https://sbhacks2015.firebaseio.com/"];
+    [[AppCommunication sharedCommunicator].firebase observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        NSLog(@"%@ -> %@", snapshot.key, snapshot.value);
+    }];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -60,6 +67,7 @@
                     
                     [self.feeds addObject:newFeed];
                 }
+                
                 [self.tableView reloadData];
             }
             else
