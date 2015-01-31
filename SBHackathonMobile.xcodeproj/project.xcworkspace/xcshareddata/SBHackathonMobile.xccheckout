@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C9FC420B-1A02-477C-AC6F-FA195E511A4D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SBHackathonMobile</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>68102EF4AC69349D042E70D053EE4B277018A9A0</key>
+		<string>https://github.com/koroket/foodApp-mobile.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SBHackathonMobile.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>68102EF4AC69349D042E70D053EE4B277018A9A0</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/koroket/foodApp-mobile.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>68102EF4AC69349D042E70D053EE4B277018A9A0</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>68102EF4AC69349D042E70D053EE4B277018A9A0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SBHackathonMobile</string>
+		</dict>
+	</array>
+</dict>
+</plist>

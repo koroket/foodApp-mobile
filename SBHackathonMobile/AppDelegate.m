@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import <FacebookSDK/FacebookSDK.h>
 @interface AppDelegate ()
 
 @end
@@ -15,8 +15,11 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application
+didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
     // Override point for customization after application launch.
+    [FBLoginView class];
     return YES;
 }
 
@@ -108,7 +111,18 @@
     [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     return _managedObjectContext;
 }
-
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    
+    // Call FBAppCall's handleOpenURL:sourceApplication to handle Facebook app responses
+    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    
+    // You can add your app-specific url handling code here if needed
+    
+    return wasHandled;
+}
 #pragma mark - Core Data Saving support
 
 - (void)saveContext {

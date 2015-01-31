@@ -10,11 +10,16 @@
 		6291228D1A7CCFDF00AD4E8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6291228C1A7CCFDF00AD4E8C /* main.m */; };
 		629122901A7CCFDF00AD4E8C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6291228F1A7CCFDF00AD4E8C /* AppDelegate.m */; };
 		629122931A7CCFDF00AD4E8C /* SBHackathonMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 629122911A7CCFDF00AD4E8C /* SBHackathonMobile.xcdatamodeld */; };
-		629122961A7CCFDF00AD4E8C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629122951A7CCFDF00AD4E8C /* ViewController.m */; };
 		629122991A7CCFDF00AD4E8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629122971A7CCFDF00AD4E8C /* Main.storyboard */; };
 		6291229B1A7CCFDF00AD4E8C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6291229A1A7CCFDF00AD4E8C /* Images.xcassets */; };
 		6291229E1A7CCFDF00AD4E8C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6291229C1A7CCFDF00AD4E8C /* LaunchScreen.xib */; };
 		629122AA1A7CCFDF00AD4E8C /* SBHackathonMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 629122A91A7CCFDF00AD4E8C /* SBHackathonMobileTests.m */; };
+		629122B51A7CD1AB00AD4E8C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629122B41A7CD1AB00AD4E8C /* LoginViewController.m */; };
+		629122B91A7CF23900AD4E8C /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629122B81A7CF23900AD4E8C /* FacebookSDK.framework */; };
+		629122BC1A7D0EA600AD4E8C /* FeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629122BB1A7D0EA500AD4E8C /* FeedTableViewController.m */; };
+		629122BF1A7D123B00AD4E8C /* AppCommunication.m in Sources */ = {isa = PBXBuildFile; fileRef = 629122BE1A7D123B00AD4E8C /* AppCommunication.m */; };
+		629122C21A7D134F00AD4E8C /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 629122C11A7D134F00AD4E8C /* Feed.m */; };
+		629122C51A7D251600AD4E8C /* NewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629122C41A7D251600AD4E8C /* NewPostViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +39,23 @@
 		6291228E1A7CCFDF00AD4E8C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6291228F1A7CCFDF00AD4E8C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		629122921A7CCFDF00AD4E8C /* SBHackathonMobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SBHackathonMobile.xcdatamodel; sourceTree = "<group>"; };
-		629122941A7CCFDF00AD4E8C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		629122951A7CCFDF00AD4E8C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		629122981A7CCFDF00AD4E8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6291229A1A7CCFDF00AD4E8C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6291229D1A7CCFDF00AD4E8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		629122A31A7CCFDF00AD4E8C /* SBHackathonMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SBHackathonMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		629122A81A7CCFDF00AD4E8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		629122A91A7CCFDF00AD4E8C /* SBHackathonMobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBHackathonMobileTests.m; sourceTree = "<group>"; };
+		629122B31A7CD1AB00AD4E8C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		629122B41A7CD1AB00AD4E8C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		629122B81A7CF23900AD4E8C /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		629122BA1A7D0EA500AD4E8C /* FeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedTableViewController.h; sourceTree = "<group>"; };
+		629122BB1A7D0EA500AD4E8C /* FeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedTableViewController.m; sourceTree = "<group>"; };
+		629122BD1A7D123B00AD4E8C /* AppCommunication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCommunication.h; sourceTree = "<group>"; };
+		629122BE1A7D123B00AD4E8C /* AppCommunication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppCommunication.m; sourceTree = "<group>"; };
+		629122C01A7D134F00AD4E8C /* Feed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feed.h; sourceTree = "<group>"; };
+		629122C11A7D134F00AD4E8C /* Feed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feed.m; sourceTree = "<group>"; };
+		629122C31A7D251600AD4E8C /* NewPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPostViewController.h; sourceTree = "<group>"; };
+		629122C41A7D251600AD4E8C /* NewPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPostViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				629122B91A7CF23900AD4E8C /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,10 +98,19 @@
 		629122891A7CCFDF00AD4E8C /* SBHackathonMobile */ = {
 			isa = PBXGroup;
 			children = (
+				629122B81A7CF23900AD4E8C /* FacebookSDK.framework */,
+				629122C01A7D134F00AD4E8C /* Feed.h */,
+				629122C11A7D134F00AD4E8C /* Feed.m */,
+				629122C31A7D251600AD4E8C /* NewPostViewController.h */,
+				629122C41A7D251600AD4E8C /* NewPostViewController.m */,
 				6291228E1A7CCFDF00AD4E8C /* AppDelegate.h */,
 				6291228F1A7CCFDF00AD4E8C /* AppDelegate.m */,
-				629122941A7CCFDF00AD4E8C /* ViewController.h */,
-				629122951A7CCFDF00AD4E8C /* ViewController.m */,
+				629122BD1A7D123B00AD4E8C /* AppCommunication.h */,
+				629122BE1A7D123B00AD4E8C /* AppCommunication.m */,
+				629122BA1A7D0EA500AD4E8C /* FeedTableViewController.h */,
+				629122BB1A7D0EA500AD4E8C /* FeedTableViewController.m */,
+				629122B31A7CD1AB00AD4E8C /* LoginViewController.h */,
+				629122B41A7CD1AB00AD4E8C /* LoginViewController.m */,
 				629122971A7CCFDF00AD4E8C /* Main.storyboard */,
 				6291229A1A7CCFDF00AD4E8C /* Images.xcassets */,
 				6291229C1A7CCFDF00AD4E8C /* LaunchScreen.xib */,
@@ -222,9 +246,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				629122BC1A7D0EA600AD4E8C /* FeedTableViewController.m in Sources */,
+				629122C51A7D251600AD4E8C /* NewPostViewController.m in Sources */,
+				629122B51A7CD1AB00AD4E8C /* LoginViewController.m in Sources */,
+				629122C21A7D134F00AD4E8C /* Feed.m in Sources */,
+				629122BF1A7D123B00AD4E8C /* AppCommunication.m in Sources */,
 				629122901A7CCFDF00AD4E8C /* AppDelegate.m in Sources */,
 				629122931A7CCFDF00AD4E8C /* SBHackathonMobile.xcdatamodeld in Sources */,
-				629122961A7CCFDF00AD4E8C /* ViewController.m in Sources */,
 				6291228D1A7CCFDF00AD4E8C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,6 +375,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mikebando/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = SBHackathonMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -357,6 +389,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mikebando/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = SBHackathonMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -416,6 +452,7 @@
 				629122AF1A7CCFDF00AD4E8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		629122B01A7CCFDF00AD4E8C /* Build configuration list for PBXNativeTarget "SBHackathonMobileTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +461,7 @@
 				629122B21A7CCFDF00AD4E8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
