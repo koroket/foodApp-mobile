@@ -11,7 +11,7 @@
 #import "Feed.h"
 #import <Firebase/Firebase.h>
 @interface FeedTableViewController ()
-@property (nonatomic, strong) NSMutableArray* feeds;
+
 
 @end
 
@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.feeds = [NSMutableArray array];
+    [AppCommunication sharedCommunicator].feeds = [NSMutableArray array];
     [self retrieveFeed];
     [AppCommunication sharedCommunicator].firebase = [[Firebase alloc] initWithUrl:@"https://sbhacks2015.firebaseio.com/"];
     [[AppCommunication sharedCommunicator].firebase observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
@@ -40,7 +40,7 @@
 
 -(void)retrieveFeed
 {
-    [[AppCommunication sharedCommunicator] getRequestWithCompletion:^(NSData *data, NSURLResponse *response, NSError *error) {
+    [[AppCommunication sharedCommunicator] getRequest:@"/newsfeed" withCompletion:^(NSData *data, NSURLResponse *response, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
             NSInteger responseStatusCode = [httpResponse statusCode];
@@ -49,7 +49,7 @@
             {
                 // do something with this data
                 // if you want to update UI, do it on main queue
-                self.feeds = [NSMutableArray array];
+                [AppCommunication sharedCommunicator].feeds = [NSMutableArray array];
                 
                 NSArray *fetchedData = [NSJSONSerialization JSONObjectWithData:data
                                                                        options:0
@@ -65,7 +65,7 @@
                     newFeed.when = [dictionary objectForKey:@"TimeRange"];
                     newFeed.what = [dictionary objectForKey:@"Food"];
                     
-                    [self.feeds addObject:newFeed];
+                    [[AppCommunication sharedCommunicator].feeds addObject:newFeed];
                 }
                 
                 [self.tableView reloadData];
@@ -86,7 +86,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return self.feeds.count;
+    return [AppCommunication sharedCommunicator].feeds.count;
 }
 
 
@@ -94,14 +94,17 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     cell.textLabel.alpha = 0.0;
     // Configure the cell...
-    ((UILabel*)[cell viewWithTag:1]).text = [NSString stringWithFormat:@"From: %@",((Feed*)self.feeds[indexPath.row]).place];
-    ((UILabel*)[cell viewWithTag:2]).text = [NSString stringWithFormat:@"To: %@",((Feed*)self.feeds[indexPath.row]).to];
-    ((UILabel*)[cell viewWithTag:3]).text = [NSString stringWithFormat:@"Pay: %@",((Feed*)self.feeds[indexPath.row]).fee];
-    ((UILabel*)[cell viewWithTag:4]).text = [NSString stringWithFormat:@"Time: %@",((Feed*)self.feeds[indexPath.row]).when];
-    ((UILabel*)[cell viewWithTag:5]).text = [NSString stringWithFormat:@"Item: %@",((Feed*)self.feeds[indexPath.row]).what];
+    ((UILabel*)[cell viewWithTag:1]).text = [NSString stringWithFormat:@"From: %@",((Feed*)[AppCommunication sharedCommunicator].feeds[indexPath.row]).place];
+    ((UILabel*)[cell viewWithTag:2]).text = [NSString stringWithFormat:@"To: %@",((Feed*)[AppCommunication sharedCommunicator].feeds[indexPath.row]).to];
+    ((UILabel*)[cell viewWithTag:3]).text = [NSString stringWithFormat:@"Pay: %@",((Feed*)[AppCommunication sharedCommunicator].feeds[indexPath.row]).fee];
+    ((UILabel*)[cell viewWithTag:4]).text = [NSString stringWithFormat:@"Time: %@",((Feed*)[AppCommunication sharedCommunicator].feeds[indexPath.row]).when];
+    ((UILabel*)[cell viewWithTag:5]).text = [NSString stringWithFormat:@"Item: %@",((Feed*)[AppCommunication sharedCommunicator].feeds[indexPath.row]).what];
     return cell;
 }
-
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [AppCommunication sharedCommunicator].selectedIndex = indexPath.row;
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

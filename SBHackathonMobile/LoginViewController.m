@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-
+#import "AppCommunication.h"
 @interface LoginViewController ()
 @property (strong, nonatomic) IBOutlet FBLoginView *FBLoginView;
 
@@ -68,8 +68,10 @@
 // This method will be called when the user information has been fetched
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
                             user:(id<FBGraphUser>)user {
-    
-
+    NSDictionary* fetchedData = user;
+    [AppCommunication sharedCommunicator].fbid =  fetchedData[@"id"];
+    [AppCommunication sharedCommunicator].fbname =  fetchedData[@"name"];
+    NSLog(@"%@", [AppCommunication sharedCommunicator].fbid);
 }
 
 // Logged-in user experience

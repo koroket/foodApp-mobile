@@ -42,7 +42,7 @@
 -(void)postRequest
 {
     NSDictionary* input = [NSDictionary dictionaryWithObjectsAndKeys:self.place.text,@"Restaurant",self.what.text,@"Food",self.when.text,@"TimeRange",self.to.text,@"MyLocation",self.fee.text,@"DeliveryFee", nil];
-    [[AppCommunication sharedCommunicator] postRequest:input withCompletion:^(NSData *data, NSURLResponse *response, NSError *error) {
+    [[AppCommunication sharedCommunicator] postRequest:@"/post" withInput:input withCompletion:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
             NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
@@ -50,7 +50,7 @@
             
             if (responseStatusCode == 200)
             {
-               [[AppCommunication sharedCommunicator].firebase setValue:@"hi"];
+               
                [self performSegueWithIdentifier:@"Done" sender:self];
             }
             else

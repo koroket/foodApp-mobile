@@ -21,9 +21,9 @@ static NSString *const ROOTURL= @"http://sb2015.herokuapp.com";
                   });
     return sharedCommunicator;
 }
--(void)postRequest:(NSDictionary *)input withCompletion:(void (^)(NSData *, NSURLResponse *, NSError *))completion
+-(void)postRequest:(NSString*)latterPart withInput:(NSDictionary *)input withCompletion:(void (^)(NSData *, NSURLResponse *, NSError *))completion
 {
-    NSString *latterPart = @"/post";
+
     NSString *fixedUrl = [NSString stringWithFormat:@"%@%@",ROOTURL,latterPart];
     
     NSURL *url = [NSURL URLWithString:fixedUrl];
@@ -43,9 +43,9 @@ static NSString *const ROOTURL= @"http://sb2015.herokuapp.com";
     [uploadTask resume];
     
 }
--(void)getRequestWithCompletion:(void (^)(NSData *, NSURLResponse *, NSError *))completion
+-(void)getRequest:(NSString*)latterPart withCompletion:(void (^)(NSData *, NSURLResponse *, NSError *))completion
 {
-    NSString *latterPart = @"/newsfeed";
+//    NSString *latterPart = @"/newsfeed";
     NSString *fixedUrl = [NSString stringWithFormat:@"%@%@",ROOTURL,latterPart];
     
     NSURL *url = [NSURL URLWithString:fixedUrl];

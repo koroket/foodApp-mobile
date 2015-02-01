@@ -12,6 +12,10 @@
 @interface AppCommunication : NSObject
 + (instancetype)sharedCommunicator;
 @property (nonatomic, strong) Firebase* firebase;
--(void)postRequest:(NSDictionary*) input withCompletion:(void (^)(NSData *, NSURLResponse *, NSError *))completion;
--(void)getRequestWithCompletion:(void (^)(NSData *, NSURLResponse *, NSError *))completion;
+@property (nonatomic, strong) NSString* fbid;
+@property (nonatomic, strong) NSString* fbname;
+@property (nonatomic, assign) int selectedIndex;
+@property (nonatomic, strong) NSMutableArray* feeds;
+-(void)postRequest:(NSString*) latterPart withInput:(NSDictionary*) input withCompletion:(void (^)(NSData *, NSURLResponse *, NSError *))completion;
+-(void)getRequest:(NSString*)latterPart withCompletion:(void (^)(NSData *, NSURLResponse *, NSError *))completion;
 @end
